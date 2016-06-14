@@ -43,10 +43,10 @@ class PagSeguroParameter
             if (!PagSeguroHelper::isEmpty($parameterItem->getValue())) {
                 $this->items[] = $parameterItem;
             } else {
-                die('requered parameterValue.');
+                throw new Exception("Parameter value is required for " . $parameterItem->getKey());
             }
         } else {
-            die('requered parameterKey.');
+            throw new Exception("Parameter key is required");
         }
     }
 
